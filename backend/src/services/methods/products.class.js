@@ -10,6 +10,9 @@ export class Product{
     static async modifyProduct(id,data){
         return Products.findByIdAndUpdate(id, data, {new:true});
     }
+    static async getOneProduct(id){
+        return Products.findById(id);
+    }
     static async deleteProducts(id){
         return Products.findByIdAndDelete(id); 
     }
