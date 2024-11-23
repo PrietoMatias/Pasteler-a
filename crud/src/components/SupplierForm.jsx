@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import M from "materialize-css"; // Si estás usando MaterializeCSS para los estilos
 
 const SupplierForm = ({ item, onSave, onCancel }) => {
     const [formData, setFormData] = useState({
@@ -20,11 +19,11 @@ const SupplierForm = ({ item, onSave, onCancel }) => {
   
     const handleChange = (e, index) => {
       const { name, value } = e.target;
-      const updatedContacts = [...formData.contacts]; // Copiamos los contactos
-      updatedContacts[index][name] = value; // Actualizamos solo el campo correspondiente del contacto
+      const updatedContacts = [...formData.contacts]; 
+      updatedContacts[index][name] = value; 
       setFormData({
         ...formData,
-        contacts: updatedContacts, // Actualizamos el estado con el contacto modificado
+        contacts: updatedContacts, 
       });
     };
   
@@ -36,7 +35,7 @@ const SupplierForm = ({ item, onSave, onCancel }) => {
     };
   
     const handleRemoveContact = (index) => {
-      const updatedContacts = formData.contacts.filter((_, i) => i !== index); // Eliminamos el contacto por índice
+      const updatedContacts = formData.contacts.filter((_, i) => i !== index); 
       setFormData({
         ...formData,
         contacts: updatedContacts,
@@ -46,13 +45,12 @@ const SupplierForm = ({ item, onSave, onCancel }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
       
-        // Asegúrate de que el formData tenga el id cuando es un proveedor existente
         const updatedItem = {
           ...formData,
-          _id: item?._id, // Asegúrate de que el id se pase si estamos editando
+          _id: item?._id,
         };
       
-        // Llamamos a onSave con el item actualizado
+        
         onSave(updatedItem);
       };
       

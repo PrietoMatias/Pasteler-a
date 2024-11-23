@@ -15,17 +15,17 @@ const register = async (req,res)=>{
 }
 const Login = async(req,res)=>{
     try {
+        console.log(req.body)
         const token = await User.login(req.body);
         if (!token) {
             res.status(401).json('Usuario o contraseñas incorrectos');
             return;
         }
         res.cookie('token', token, {
-            httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
-            sameSite: 'strict',
-            maxAge: 3600000 
+            httpOnly: false,
+            secure: process.env.NODE_ENV === 'production', 
         });
+        console.log(token)
         res.status(200).json({ message: 'Login exitoso' });
     } catch (error) {
         res.status(500).json({ message: 'Error en el servidor: ' + error });

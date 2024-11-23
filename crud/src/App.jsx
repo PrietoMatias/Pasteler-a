@@ -1,24 +1,62 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Home from './pages/Home';
-import Dashboard from './pages/Dashboard'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import Login from './pages/Login';
 import Products from './pages/Products';
+import Dashboard from './pages/Dashboard';
 import Inventory from './pages/Inventory';
 import Supplier from './pages/Supplier';
+import ProtectedRoute from './components/ProtectedRoute';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-      <Home/>
-        <Routes>
-          <Route path='/' element={<Products/>}/>
-          <Route path='/dashboard' element={<Dashboard/>}/>
-          <Route path='/inventory' element={<Inventory/>}/>
-          <Route path='/suppliers' element={<Supplier/>}/>
-        </Routes>
-      </BrowserRouter>
-    </>
-  )
+    <BrowserRouter>
+      <WrapperWithHome /> {/* Nueva función para manejar el Home */}
+    </BrowserRouter>
+  );
 }
 
-export default App
+const WrapperWithHome = () => {
+  const location = useLocation();
+
+  return (
+    <>
+      {location.pathname !== '/' && <Home />}
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route
+          path="/products"
+          element={
+            <ProtectedRoute>
+              <Products />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/inventory"
+          element={
+            <ProtectedRoute>
+              <Inventory />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/suppliers"
+          element={
+            <ProtectedRoute>
+              <Supplier />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </>
+  );
+};
+export default App;

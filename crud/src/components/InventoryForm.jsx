@@ -27,7 +27,7 @@ const InventoryForm = ({ item, onSave, onCancel, suppliers1 }) => {
         } catch (error) {
             console.error("Error al obtener proveedores: ", error);
         }
-    };
+    }; 
        useEffect(() => {
         if (item) {
             setFormData({
