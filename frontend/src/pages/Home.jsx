@@ -116,12 +116,6 @@ const Home = () => {
           :
           (
             <Box
-              sx={{
-                textAlign: 'center',
-                padding: 3,
-                backgroundColor: '#e1d8e6',
-                flex: 1,
-              }}
               className={'inicio'}
             >
 
@@ -147,12 +141,7 @@ const Home = () => {
                     <img
                       src={image}
                       alt={`image-${index}`}
-                      style={{
-                        width: '28%',
-                        height: '300px',
-                        objectFit: 'cover',
-                        borderRadius: '100px'
-                      }}
+                      className='img-carrousel'
                     />
                   </div>
                 ))}

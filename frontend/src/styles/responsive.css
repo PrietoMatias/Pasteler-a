@@ -1,3 +1,13 @@
+.inicio{
+    text-align: center;
+    padding: 0.5rem;
+}
+.img-carrousel{
+    width: 28%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 100px;
+}
 .img-inicio{
     width: 15%;
     height: auto;
@@ -7,12 +17,16 @@
     .inicio{
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 20px;
         justify-content: center;
         align-items: center;
     }
     .img-inicio{
-        width: 50%;
-        
+        width: 50%;   
+    }
+    .img-carrousel{
+        border-radius: 400px;
+        height: 150px;
     }
 }
+
