@@ -4,9 +4,9 @@ import authenticateToken from '../middelwares/autenticateToken.js';
 
 const router = Router();
 
-router.get('/get/suppliers',authenticateToken, getSuppliers);
-router.post('/add/supplier',authenticateToken, addSuppliers);
-router.put('/update/supplier/:id',authenticateToken, updateSuppliers);
-router.delete('/delete/supplier/:id',authenticateToken, deleteSuppliers);
+router.get('/get/suppliers', getSuppliers);
+router.post('/add/supplier', addSuppliers);
+router.put('/update/supplier/:id', updateSuppliers);
+router.delete('/delete/supplier/:id', deleteSuppliers);
 
 export default router;

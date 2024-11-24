@@ -6,9 +6,9 @@ const router = Router();
 
 router.get('/get/products', getProducts);
 router.get('/get/product/:id', getProduct);
-router.post('/add/products',authenticateToken, addProduct);
-router.put('/update/product/:id',authenticateToken, updateProduct);
-router.delete('/delete/product/:id',authenticateToken, deleteProduct);
+router.post('/add/products', addProduct);
+router.put('/update/product/:id', updateProduct);
+router.delete('/delete/product/:id', deleteProduct);
 
 
 export default router;
