@@ -21,6 +21,8 @@ const app = express()
 
 const PORT = process.env.PORT
 
+const URL_FRONT = process.env.URL_FRONT;
+
 const startServer = async ()=>{
     //Conexión a la base de datos.
     await connection();
@@ -30,7 +32,7 @@ const startServer = async ()=>{
     app.use(cookieParser());
     app.use(
         cors({
-          origin: 'http://localhost:5173', 
+          origin: URL_FRONT, 
           credentials: true, 
         })
       );
@@ -56,7 +58,7 @@ const startServer = async ()=>{
     
 
     app.listen(PORT, () =>{
-        console.log("Escuchando puerto 3000")
+        console.log(`Escuchando puerto ${PORT}`)
     });
 };
 
