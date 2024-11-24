@@ -1,4 +1,4 @@
-import express, {json} from 'express'
+import express, { json } from 'express'
 import connection from './src/services/database.js'
 import routeInventory from './src/routes/route.inventory.js';
 import routeSupplier from './src/routes/route.supplier.js';
@@ -23,43 +23,52 @@ const PORT = process.env.PORT
 
 const URL_FRONT = process.env.URL_FRONT;
 
-const startServer = async ()=>{
-    //Conexión a la base de datos.
-    await connection();
+const startServer = async () => {
+  //Conexión a la base de datos.
+  await connection();
 
-    //Middelwares
-    
-    app.use(cookieParser());
-    app.use(
-        cors({
-          origin: URL_FRONT, 
-          credentials: true, 
-        })
-      );
-    app.use(json());
-    app.use(morgan('dev'));
-    app.use(bodyParser.json());
+  //Middelwares
 
-    //Rutas
-    app.use('/api', routeInventory);
-    app.use('/api', routeSales);
-    app.use('/api', routeSupplier);
-    app.use('/api', routeUser);
-    app.use('/api', routeReport);
-    app.use('/api', routeProducts);
-    app.use('/api', routeDashboard);
-    app.use('/api', autentication)
-    app.use('/mercadopago', mercadoPagoRoutes)
-    //Manejo de errores global
-    app.use((err, req, res, next) => {
-        console.error(err.stack);
-        res.status(500).json({ message: 'Algo salió mal, rey.' });
-    });
-    
+  app.use(cookieParser());
+  const allowedOrigins = process.env.URL_FRONT.split(',').map((url) => url.trim());
 
-    app.listen(PORT, () =>{
-        console.log(`Escuchando puerto ${PORT}`)
-    });
+  app.use(
+    cors({
+      origin: (origin, callback) => {
+        // Si el origen está en la lista permitida o no tiene origen (por ejemplo, solicitudes internas)
+        if (!origin || allowedOrigins.includes(origin)) {
+          callback(null, true);
+        } else {
+          callback(new Error('No permitido por CORS'));
+        }
+      },
+      credentials: true,
+    })
+  );
+  app.use(json());
+  app.use(morgan('dev'));
+  app.use(bodyParser.json());
+
+  //Rutas
+  app.use('/api', routeInventory);
+  app.use('/api', routeSales);
+  app.use('/api', routeSupplier);
+  app.use('/api', routeUser);
+  app.use('/api', routeReport);
+  app.use('/api', routeProducts);
+  app.use('/api', routeDashboard);
+  app.use('/api', autentication)
+  app.use('/mercadopago', mercadoPagoRoutes)
+  //Manejo de errores global
+  app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ message: 'Algo salió mal, rey.' });
+  });
+
+
+  app.listen(PORT, () => {
+    console.log(`Escuchando puerto ${PORT}`)
+  });
 };
 
 startServer();
