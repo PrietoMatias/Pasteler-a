@@ -16,7 +16,7 @@ const Home = () => {
         <div className="nav-wrapper">
           <a className="brand-logo">
             <img
-              src="src/assets/logo-header.png"
+              src="https://github.com/augustoterrera/Image-Proyect/blob/master/Logo/logo-header-enhanced.png?raw=true"
               alt=""
               style={{ width: '70px', height: '60px', marginRight: '5px' }}
             />
