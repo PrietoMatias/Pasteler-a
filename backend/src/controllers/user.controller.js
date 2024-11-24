@@ -15,7 +15,6 @@ const register = async (req,res)=>{
 }
 const Login = async(req,res)=>{
     try {
-        console.log(req.body)
         const token = await User.login(req.body);
         if (!token) {
             res.status(401).json('Usuario o contraseñas incorrectos');
