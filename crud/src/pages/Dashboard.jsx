@@ -1,7 +1,5 @@
 import '../css/dashboard.css';
-import AverageMargin from '../components/AverageMargin';
 import MonthlySales from '../components/MonthlySales';
-import TopSellingProduct from '../components/TopSellingProduct';
 import TopSuppliers from '../components/TopSuppliers';
 import WeeklySales from '../components/WeeklySales';
 import CategoryDistribution from '../components/CategoryDistribution';
@@ -36,22 +34,6 @@ const Dashboard = () => {
         <div className="chart-container">
           <WeeklySales />
         </div>
-      </div>
-
-      <div
-        className={`card ${expandedCard === 'average-margin' ? 'expanded' : ''}`}
-        onClick={() => handleCardClick('average-margin')}
-      >
-        <h4>Margen Promedio</h4>
-        <AverageMargin />
-      </div>
-
-      <div
-        className={`card ${expandedCard === 'top-selling' ? 'expanded' : ''}`}
-        onClick={() => handleCardClick('top-selling')}
-      >
-        <h4>Productos Más Vendidos</h4>
-        <TopSellingProduct />
       </div>
 
       <div
