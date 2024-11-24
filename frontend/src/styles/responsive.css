@@ -1,9 +1,16 @@
 .inicio{
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    justify-content: center;
+    align-items: center;
     padding: 0.5rem;
 }
+.carousel-container{
+    width: 100%;
+}
 .img-carrousel{
-    width: 28%;
+    width: 50% !important;
     height: 300px;
     object-fit: cover;
     border-radius: 100px;
@@ -13,6 +20,7 @@
     height: auto;
     margin-bottom: -70px;
 }
+
 @media (max-width: 1000px){
     .inicio{
         display: flex;
@@ -32,4 +40,5 @@
         height: 150px;
     }
 }
+
 

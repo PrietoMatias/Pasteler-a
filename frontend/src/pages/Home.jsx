@@ -127,25 +127,27 @@ const Home = () => {
 
               <p style={{ fontSize: '1.5rem', marginBottom: '20px', fontFamily: 'Roboto' }}>{bakeryInfo.description}</p>
 
-              <Carousel
-                showArrows={false}
-                infiniteLoop
-                autoPlay
-                interval={3000}
-                stopOnHover
-                dynamicHeight
-                showThumbs={false}
-              >
-                {galleryImages.map((image, index) => (
-                  <div key={index}>
-                    <img
-                      src={image}
-                      alt={`image-${index}`}
-                      className='img-carrousel'
-                    />
-                  </div>
-                ))}
-              </Carousel>
+              <div className="carousel-container">
+                <Carousel
+                  showArrows={false}
+                  infiniteLoop
+                  autoPlay
+                  interval={3000}
+                  stopOnHover
+                  dynamicHeight
+                  showThumbs={false}
+                >
+                  {galleryImages.map((image, index) => (
+                    <div key={index}>
+                      <img
+                        src={image}
+                        alt={`image-${index}`}
+                        className="img-carrousel"
+                      />
+                    </div>
+                  ))}
+                </Carousel>
+              </div>
               <Button
                 variant="contained"
                 sx={{
