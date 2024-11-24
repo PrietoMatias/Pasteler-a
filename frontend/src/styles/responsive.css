@@ -20,9 +20,12 @@
         gap: 20px;
         justify-content: center;
         align-items: center;
+        background-color: aqua;
+        margin-bottom: 50px;
     }
     .img-inicio{
         width: 50%;   
+        margin-bottom: -70px;
     }
     .img-carrousel{
         border-radius: 400px;
