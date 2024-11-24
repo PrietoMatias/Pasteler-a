@@ -64,16 +64,6 @@ export default function SearchAppBar({ searchTerm, setSearchTerm, cart, updateQu
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-
           {/* Logo */}
           <img src="https://github.com/augustoterrera/Image-Proyect/blob/master/Logo/logo-header-enhanced.png?raw=true" alt="Logo" style={{ width: '60px', height: '50px', marginRight: '5px' }} />
 
