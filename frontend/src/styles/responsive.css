@@ -1,0 +1,18 @@
+.img-inicio{
+    width: 15%;
+    height: auto;
+    margin-bottom: -70px;
+}
+@media (max-width: 1000px){
+    .inicio{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+    .img-inicio{
+        width: 50%;
+        
+    }
+}

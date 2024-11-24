@@ -7,6 +7,8 @@ import Footer from '../components/Footer.jsx';
 import Button from '@mui/material/Button';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { ClassNames } from '@emotion/react';
+import '../styles/responsive.css'
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -120,16 +122,13 @@ const Home = () => {
                 backgroundColor: '#e1d8e6',
                 flex: 1,
               }}
+              className={'inicio'}
             >
 
               <img
                 src={bakeryInfo.logo}
                 alt="Logo"
-                style={{
-                  width: '15%',
-                  height: 'auto',
-                  marginBottom: '-70px',
-                }}
+                className='img-inicio'
               />
 
               <p style={{ fontSize: '1.5rem', marginBottom: '20px', fontFamily: 'Roboto' }}>{bakeryInfo.description}</p>
