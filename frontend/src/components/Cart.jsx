@@ -23,7 +23,7 @@ export default function Cart({ cart, openCart, toggleCartDialog, updateQuantity,
         unit_price: product.price,
       }));
 
-      const response = await fetch("http://localhost:3000/mercadopago/create_preference", {
+      const response = await fetch("https://pasteleiabackend.onrender.com/mercadopago/create_preference", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
