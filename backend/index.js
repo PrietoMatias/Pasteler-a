@@ -13,8 +13,13 @@ import cors from 'cors';
 import morgan from 'morgan';
 import autentication from './src/routes/route.autentication.js';
 import cookieParser from 'cookie-parser';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express()
+
+const PORT = process.env.PORT
 
 const startServer = async ()=>{
     //Conexión a la base de datos.
@@ -50,7 +55,7 @@ const startServer = async ()=>{
     });
     
 
-    app.listen(3000, () =>{
+    app.listen(PORT, () =>{
         console.log("Escuchando puerto 3000")
     });
 };

@@ -30,7 +30,7 @@ DELETE http://localhost:3000/api/delete/product/672d066381ed09d9bc99ef10
 
 GET http://localhost:3000/api/get/products
 
+### Obten un producto
 
-###
+GET http://localhost:3000/api/get/product/672d063281ed09d9bc99ef0c
 
-GET http://localhost:3000/api/get/product/673f5284048fe7822c097df6

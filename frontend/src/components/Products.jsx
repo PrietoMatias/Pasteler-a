@@ -114,6 +114,9 @@ export default function Products({ products, addToCart }) {
         >
           Agregar al carrito
         </Button>
+        <Typography variant="h6" sx={{ color: 'text.secondary' }}>
+          {product.price}
+        </Typography>
       </CardActions>
     </Card>
   );

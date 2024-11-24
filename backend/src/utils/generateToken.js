@@ -1,6 +1,8 @@
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+dotenv.config()
 
-export const secret = 'MiloPrietoMatias';
+const secret = process.env.JWT_SECRET;
 
 export const generateToken = (playload)=>{
     return jwt.sign(playload, secret, {expiresIn: '1h'});

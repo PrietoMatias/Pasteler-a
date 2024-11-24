@@ -1,5 +1,4 @@
-import jwt from 'jsonwebtoken';
-import { secret } from '../utils/generateToken.js';
+import { verifyToken } from '../utils/generateToken.js';
 
 const authenticateToken = (req, res, next) => {
   const token = req.cookies.token; 
@@ -8,7 +7,7 @@ const authenticateToken = (req, res, next) => {
   }
 
   try { 
-    const user = jwt.verify(token, secret); 
+    const user = verifyToken(token); 
     res.locals.user = user; 
     next();
   } catch (error) {

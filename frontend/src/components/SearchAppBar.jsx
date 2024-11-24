@@ -75,7 +75,7 @@ export default function SearchAppBar({ searchTerm, setSearchTerm, cart, updateQu
           </IconButton>
 
           {/* Logo */}
-          <img src="src/assets/logo-header.png" alt="Logo" style={{ width: '70px', height: '60px', marginRight: '5px' }} />
+          <img src="https://github.com/augustoterrera/Image-Proyect/blob/master/Logo/logo-header-enhanced.png?raw=true" alt="Logo" style={{ width: '60px', height: '50px', marginRight: '5px' }} />
 
           {/* Barra de búsqueda */}
           <Search>

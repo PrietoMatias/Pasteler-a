@@ -131,4 +131,6 @@ export {
     lowStockProducts,
     categoryDistribution,
     getProduct
+    categoryDistribution,
+    getProduct
 }

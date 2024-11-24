@@ -5,7 +5,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import '../styles/table-cart.css';
 
 export default function Cart({ cart, openCart, toggleCartDialog, updateQuantity, removeFromCart }) {
@@ -75,12 +75,12 @@ export default function Cart({ cart, openCart, toggleCartDialog, updateQuantity,
 
   return (
     <Dialog open={openCart} onClose={toggleCartDialog} style={{ textAlign: 'center' }} sx={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem' }}>
-      <DialogTitle>Carrito de Compras</DialogTitle>
+      <DialogTitle sx={{fontSize: '30px'}}>Carrito de Compras</DialogTitle>
       <DialogContent>
         {cart.length === 0 ? (
           <p>No hay productos en el carrito.</p>
         ) : (
-          <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '20px' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '20px', fontFamily:'Roboto' }}>
             <thead>
               <tr>
                 <th style={{ padding: '10px', textAlign: 'center', borderBottom: '2px solid #ddd' }}>Nombre</th>

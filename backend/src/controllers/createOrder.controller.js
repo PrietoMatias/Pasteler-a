@@ -1,6 +1,6 @@
 import { MercadoPagoConfig, Preference } from 'mercadopago';
 
-const client = new MercadoPagoConfig({ accessToken: 'APP_USR-8114890615443352-112118-e96bed1a55c6607eaac7382bc9d8c24f-2112492924' });
+const client = new MercadoPagoConfig({ accessToken: process.env.MP_CLIENT });
 const preference = new Preference(client);
 
 const createPreference = async (req, res) => {

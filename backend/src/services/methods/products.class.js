@@ -19,6 +19,9 @@ export class Product{
     static async allProducts(){
         return Products.find();
     }
+    static async getProduct(id){
+        return Products.findById(id);
+    }
     static async avgProduct(){
         return Products.aggregate([
             {
