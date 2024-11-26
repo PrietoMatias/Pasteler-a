@@ -19,6 +19,8 @@ dotenv.config();
 
 const app = express()
 
+const PORT = process.env.PORT || 4000
+
 const URL_FRONT = process.env.URL_FRONT;
 
 const startServer = async () => {
