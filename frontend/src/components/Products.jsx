@@ -27,7 +27,7 @@ export default function Products({ products, addToCart }) {
         },
       ];
 
-      const response = await fetch("https://pasteleria-backend.onrender.com/mercadopago/create_preference", {
+      const response = await fetch("https://pasteler-a-production.up.railway.app/mercadopago/create_preference", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

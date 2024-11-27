@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL:'https://pasteleria-backend.onrender.com/api',
+    baseURL:'https://pasteler-a-production.up.railway.app/api',
     withCredentials:true,
     timeout: 5000,
     headers:{
